@@ -5,6 +5,12 @@ plugins {
 group 'ru.alfabank'
 version '1.0-SNAPSHOT'
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -13,6 +19,10 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured:5.4.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.2'
 
 }
 
