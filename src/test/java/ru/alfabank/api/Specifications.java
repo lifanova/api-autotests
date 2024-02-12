@@ -23,6 +23,12 @@ public class Specifications {
                 .build();
     }
 
+    public static ResponseSpecification responseSpecNotFound() {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(404)
+                .build();
+    }
+
     public static void installSpecifications(RequestSpecification reqSpec, ResponseSpecification respSpec) {
         RestAssured.requestSpecification = reqSpec;
         RestAssured.responseSpecification = respSpec;
