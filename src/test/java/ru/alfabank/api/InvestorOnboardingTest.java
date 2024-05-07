@@ -5,14 +5,18 @@ import org.junit.jupiter.api.Test;
 import ru.alfabank.data.InvestorDto;
 import ru.alfabank.data.NotFoundInfo;
 
+import java.io.IOException;
+
 import static io.restassured.RestAssured.given;
 
 public class InvestorOnboardingTest {
     private static final String URL = "https://investor-onboarding.dfa.internal.cbclusterint.alfaintra.net/";
 
     @Test
-    public void getInvestorByPinTest() {
-        String pin = "BDP7YC";
+    public void getInvestorByPinTest() throws IOException {
+        System.getProperties().load(ClassLoader.getSystemResourceAsStream("application.properties"));
+        String pin = System.getProperty("user.investor.pin");
+
         Specifications.installSpecifications(Specifications.requestSpec(URL), Specifications.responseSpecOK());
         InvestorDto info = given()
                 .when()
