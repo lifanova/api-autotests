@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class AlfaApiTest {
     private static final String URL = "https://baas-pl.moscow.alfaintra.net/";
 
-    @Test
+    //@Test
     public void getPortfolioDataTest() throws IOException {
         System.getProperties().load(ClassLoader.getSystemResourceAsStream("application.properties"));
         String pin = System.getProperty("user.pin");

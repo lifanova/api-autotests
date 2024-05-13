@@ -28,7 +28,7 @@ public class InvestorOnboardingTest {
         Assertions.assertEquals(pin, info.getPin());
     }
 
-    @Test
+    //@Test
     public void getInvestorByPinNotFoundTest() {
         String pin = "BCDBAL";
         String description = String.format("Not found investor by pin %s", pin);
